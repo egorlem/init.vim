@@ -15,7 +15,7 @@ function! StatuslineMode()
   elseif l:mode==#"c"
     return "Command"
   elseif l:mode==#"!"
-    return "𝚂𝚑𝚎𝚕𝚕"
+    return "Shell"
   elseif l:mode==#":"
     return "Options"
   endif
@@ -23,11 +23,8 @@ endfunction
 
 
 set laststatus=2
-set statusline+=\ 
-set statusline+=%#vimMode# 
-set statusline+=\ 
-set statusline+=%{StatuslineMode()}
-set statusline+=\ 
+set statusline+=\ %#vimMode# 
+set statusline+=\ %{StatuslineMode()}\ 
 set statusline+=%#rst#
 set statusline+=\   
 set statusline+=%m
@@ -36,5 +33,4 @@ set statusline+=\ %y
 set statusline+=\ 𝖫𝗇%l,
 set statusline+=\ 𝖢𝗈𝗅%c
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\ %p%%
-set statusline+=\ 
+set statusline+=\ %p%%\  
