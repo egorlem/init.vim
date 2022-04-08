@@ -21,7 +21,6 @@ function! StatuslineMode()
   endif
 endfunction
 
-
 set laststatus=2
 set statusline+=\ %#vimMode# 
 set statusline+=\ %{StatuslineMode()}\ 
