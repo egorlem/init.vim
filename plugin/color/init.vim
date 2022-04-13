@@ -1,3 +1,5 @@
+let g:codedark_term256 = 1
+
 fun! <sid>hi(group, fg, bg, attr, sp)
   if !empty(a:fg)
     exec "hi " . a:group . " guifg=" . a:fg.gui . " ctermfg=" . (g:codedark_term256 ? a:fg.cterm256 : a:fg.cterm)
@@ -44,5 +46,10 @@ endif
 " Переменные
 let s:hvDarkGreen = {'gui': 'NONE', 'cterm': 'NONE', 'cterm256': '30'}
 let s:cdFront = {'gui': '#D4D4D4', 'cterm': s:cterm05, 'cterm256': '188'}
+let s:cdDarkGreen = {'gui': 'NONE', 'cterm': 'NONE', 'cterm256': '23'}
+let s:baseWhite = {'gui': '#dadada', 'cterm': s:cterm00, 'cterm256': '253'}
 
-call <sid>hi('vimMode', s:cdFront, s:hvDarkGreen, 'none', {}) " DONE
+
+call <sid>hi('StatusLine', s:baseWhite, s:cdDarkGreen, 'none', {})
+call <sid>hi('vimMode', s:cdFront, s:hvDarkGreen, 'bold', {}) 
+
